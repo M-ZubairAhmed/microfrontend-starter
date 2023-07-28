@@ -1,0 +1,19 @@
+{
+  "name": "dev-days-jul-2023",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"wsrun --parallel start\"",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "workspaces": [
+    "packages/host",
+    "packages/nav"
+  ],
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "wsrun": "^5.2.0"
+  }
+}

@@ -1,7 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 
-const deps = require('./package.json').dependencies
 module.exports = {
   output: {
     publicPath: 'http://localhost:3000/'
@@ -40,20 +38,6 @@ module.exports = {
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: 'host',
-      filename: 'remoteEntry.js',
-      remotes: {
-        "remote-nav": 'nav@http://localhost:3001/remoteEntry.js'
-      },
-      exposes: {},
-      shared: {
-        "react": {
-          singleton: true,
-          requiredVersion: deps.react
-        }
-      },
-    }),
     new HtmlWebPackPlugin({
       template: './src/index.html'
     })

@@ -14,10 +14,6 @@
     "start": "concurrently \"wsrun --parallel start\"",
     "build": "npm run build --workspaces --if-present"
   },
-  "workspaces": [
-    "packages/host",
-    "packages/nav"
-  ],
   "devDependencies": {
     "concurrently": "^5.2.0",
     "wsrun": "^5.2.0"

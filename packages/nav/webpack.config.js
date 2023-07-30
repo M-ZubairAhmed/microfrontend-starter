@@ -1,5 +1,4 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 
 module.exports = {
   output: {
@@ -39,15 +38,6 @@ module.exports = {
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: 'nav',
-      filename: 'remoteEntry.js',
-      remotes: {},
-      exposes: {
-        './Header': './src/Header'
-      },
-      shared:{},
-    }),
     new HtmlWebPackPlugin({
       template: './src/index.html'
     })
